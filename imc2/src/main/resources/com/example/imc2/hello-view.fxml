@@ -75,6 +75,7 @@
             <TableColumn fx:id="colEmail" prefWidth="220" text="Email" />
 
             <TableColumn fx:id="colImc" prefWidth="100" text="IMC" />
+         <TableColumn fx:id="colStatus" prefWidth="120.0" text="Status" />
 
         </columns>
 

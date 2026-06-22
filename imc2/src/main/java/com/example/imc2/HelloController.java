@@ -16,6 +16,7 @@ public class HelloController {
     private TextField txtAltura;
     @FXML
     private Label lblResultado;
+
     @FXML
     public void calcularIMC() {
         double peso = Double.parseDouble(txtPeso.getText());
@@ -35,6 +36,7 @@ public class HelloController {
     @FXML private TableColumn colNome;
     @FXML private TableColumn colEmail;
     @FXML private TableColumn colImc;
+    @FXML private TableColumn colStatus;
     @FXML private TextField inputName;
     @FXML private TextField inputEmail;
     @FXML private double imcCalculado;
@@ -54,14 +56,19 @@ public class HelloController {
                 new PropertyValueFactory<>("imc")
         );
 
+        colStatus.setCellValueFactory(
+                new PropertyValueFactory<>("status")
+        );
+
         lista = FXCollections.observableArrayList(
-                new Usuario("Maria", "maria@email.com", 21.3),
-                new Usuario("João", "joao@email.com", 21.3)
+                new Usuario("Maria", "maria@email.com", 21.3, "normal"),
+                new Usuario("João", "joao@email.com", 21.3, "normal")
         );
         tabela.setItems(lista);
         colEmail.setText("E-mail");
         colNome.setText("Nome");
         colImc.setText("Imc");
+        colStatus.setText("Status");
     }
 
     @FXML
@@ -69,6 +76,7 @@ public class HelloController {
 
         String nome = inputName.getText();
         String email = inputEmail.getText();
+        String status;
 
         double peso = Double.parseDouble(txtPeso.getText());
         double altura = Double.parseDouble(txtAltura.getText());
@@ -81,7 +89,14 @@ public class HelloController {
                 String.format("IMC: %.1f", imc)
         );
 
-        lista.add(new Usuario(nome, email, imc));
+        if(imc<18.5){
+            status = "abaixo do peso";
+        }else if(imc<24.9){
+            status = "normal";
+        }else
+            status = "sobrepeso";
+
+        lista.add(new Usuario(nome, email, imc, status));
     }
 
 }
