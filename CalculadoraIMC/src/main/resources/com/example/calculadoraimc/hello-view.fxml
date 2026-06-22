@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculadoraimc.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox prefHeight="0.0" prefWidth="200.0">
+      <children>
+         <Label text="Peso (kg):">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Label>
+      </children>
+   </HBox>
+   <TextField fx:id="txtPeso" maxWidth="400.0" promptText="            ___________" />
+   <HBox prefHeight="0.0" prefWidth="200.0">
+      <children>
+         <Label text="Altura (m):">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Label>
+      </children>
+   </HBox>
+   <TextField fx:id="txtAltura" maxWidth="400.0" promptText="            ___________" />
+   <Button mnemonicParsing="false" onAction="#calcularIMC" prefWidth="150.0" style="-fx-background-color: green; -fx-border-color: darkgreen; -fx-background-radius: 30; -fx-border-radius: 30;" text="Calcular" textFill="WHITE">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Label fx:id="lblResultado" style="-fx-border-color: gray; -fx-background-color: lightgray; -fx-background-radius: 30; -fx-border-radius: 30;" text="Resultado:" textAlignment="CENTER">
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+      <padding>
+         <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+      </padding>
+      <font>
+         <Font name="System Bold" size="22.0" />
+      </font>
+   </Label>
+</VBox>

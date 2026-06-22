@@ -1,0 +1,1 @@
+o código atualmente só abre no terminal, abra o teminal nessa pasta e execute "java -jar estacionamento.jar"
